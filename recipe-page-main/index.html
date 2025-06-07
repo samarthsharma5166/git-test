@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Recipe page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      :root {
+        --White: hsl(0, 0%, 100%);
+
+        --Stone100: hsl(30, 54%, 90%);
+        --Stone150: hsl(30, 18%, 87%);
+        --Stone600: hsl(30, 10%, 34%);
+        --Stone900: hsl(24, 5%, 18%);
+
+        --Brown800: hsl(14, 45%, 36%);
+
+        --Rose800: hsl(332, 51%, 32%);
+        --Rose50: hsl(330, 100%, 98%);
+      }
+      @font-face {
+        font-family: "Outfit";
+        src: url("./assets/fonts/outfit/Outfit-VariableFont_wght.ttf");
+      }
+      @font-face {
+        font-family: "young-serif";
+        src: url("./assets/fonts/young-serif/YoungSerif-Regular.ttf");
+      }
+      body {
+        background-color: var(--Stone100);
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+      }
+      .card {
+        margin: 0 auto;
+        background-color: var(--White);
+        width: 600px;
+        height: auto;
+        border-radius: 15px;
+        margin-top: 120px;
+        padding-bottom: 24px;
+        margin-bottom: 170px;
+        padding-top: 10px;
+      }
+
+      .img {
+        width: 90%;
+        display: block;
+        margin: 24px auto 0 auto;
+          border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+      }
+      .title {
+        font-size: 32px;
+        color: var(--Stone900);
+        margin-top: 24px;
+        margin-left: 24px;
+        text-align: left;
+        width: 100%;
+        font-family: "young-serif", sans-serif;
+        font-weight: 400;
+      }
+      .description {
+        font-family: "Outfit", serif;
+        font-size: 14px;
+        color: var(--Rose800);
+        margin: 0 24px;
+        text-align: left;
+        width: fit-content;
+        font-weight: 400;
+      }
+      .time {
+        background: var(--Rose50);
+        width: 90%;
+        margin: 0 auto;
+        border-radius: 15px;
+        margin-top: 24px;
+        padding-top: 1px;
+      }
+      .list {
+        font-family: "Outfit", serif;
+        font-size: 14px;
+        color: var(--Rose800);
+        margin: 0 24px;
+        text-align: left;
+        width: fit-content;
+        font-weight: 400;
+        padding-bottom: 20px;
+      }
+      .time-title {
+        color: var(--Rose800);
+        font-size: 20px;
+        font-family: "Outfit", sans-serif;
+        font-weight: 600;
+        margin-left: 24px;
+      }
+      .ingredients {
+        width: 90%;
+        margin: 0 auto;
+        border-radius: 15px;
+        margin-top: 24px;
+      }
+      .ingredients h1 {
+        font-size: 26px;
+        font-family: "young-serif", sans-serif;
+        font-weight: 400;
+        color: var(--Brown800);
+        margin: 0;
+      }
+      .ingredients ul {
+        font-family: "Outfit", sans-serif;
+        font-size: 14px;
+        color: var(--Rose800);
+        text-align: left;
+        width: fit-content;
+        font-weight: 400;
+        padding-bottom: 20px;
+      }
+      ul li {
+        margin-top: 10px;
+      }
+      ul > li:first-child {
+        margin-top: 0;
+      }
+      .line {
+        width: 90%;
+        margin: 0 auto;
+        background-color: var(--Stone150);
+      }
+      ol li {
+        margin-top: 10px;
+      }
+      ol > li:first-child {
+        margin-top: 0;
+      }
+      .ingredients ol {
+        font-family: "Outfit", sans-serif;
+        font-size: 14px;
+        color: var(--Rose800);
+        text-align: left;
+        width: fit-content;
+        font-weight: 400;
+        padding-bottom: 20px;
+      }
+      .subheading {
+        font-weight: 600;
+        color: var(--Rose800);
+        font-size: 15px;
+      }
+      .description2 {
+        font-family: "Outfit", serif;
+        font-size: 14px;
+        color: var(--Rose800);
+        text-align: left;
+        width: fit-content;
+        font-weight: 400;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 8px 20px;
+        text-align: left;
+        font-size: 15px;
+        font-family: "Outfit", sans-serif;
+        color: var(--Rose800);
+      }
+
+      tr:nth-child(1),
+      tr:nth-child(2),
+      tr:nth-child(3) {
+        border-bottom: 1px solid var(--Stone150); /* or your desired color */
+      }
+      .val {
+        font-weight: 600;
+        color: var(--Brown800);
+      }
+      @media (max-width: 575px) {
+        .card {
+          width: 100vw;
+          height: 100vh;
+          border-radius: 0;
+          margin: 0;
+          padding: 0;
+          overflow-y: auto;
+          padding-bottom: 20px;
+        }
+        body {
+          background-color: var(
+            --White
+          );
+        }
+        .title {
+          line-height: 40px;
+        }
+        .img {
+          width: 100%;
+          border-radius: 0;
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <img src="./assets/images/image-omelette.jpeg" class="img" alt="" />
+      <h1 class="title">Simple omelette recipe</h1>
+      <p class="description">
+        An easy and quick dish, perfect for any meal. This classic omelette
+        combines beaten eggs cooked to perfection, optionally filled with your
+        choice of cheese, vegetables, or meats.
+      </p>
+      <div class="time">
+        <h3 class="time-title">Preparation time</h3>
+        <ul class="list">
+          <li>
+            <span class="subheading">Total:</span> Approximately 10 minutes
+          </li>
+          <li><span class="subheading">Preparation:</span> 5 minutes</li>
+          <li><span class="subheading">Cooking:</span> 5 minutes</li>
+        </ul>
+      </div>
+      <div class="ingredients">
+        <h1>Ingredients</h1>
+        <ul>
+          <li>2-3 large eggs</li>
+          <li>Salt, to taste</li>
+          <li>Pepper, to taste</li>
+          <li>1 tablespoon of butter or oil</li>
+          <li>
+            Optional fillings: cheese, diced vegetables, cooked meats, herbs
+          </li>
+        </ul>
+      </div>
+      <hr class="line" />
+      <div class="ingredients">
+        <h1>Instructions</h1>
+        <ol>
+          <li>
+            <span class="subheading">Beat the eggs:</span> In a bowl, beat the
+            eggs with a pinch of salt and pepper until they are well mixed. You
+            can add a tablespoon of water or milk for a fluffier texture.
+          </li>
+          <li>
+            <span class="subheading">Heat the pan:</span> Place a non-stick
+            frying pan over medium heat and add butter or oil.
+          </li>
+          <li>
+            <span class="subheading">Cook the omelette:</span> Once the butter
+            is melted and bubbling, pour in the eggs. Tilt the pan to ensure the
+            eggs evenly coat the surface.
+          </li>
+          <li>
+            <span class="subheading">Cook the omelette:</span> Add fillings
+            (optional): When the eggs begin to set at the edges but are still
+            slightly runny in the middle, sprinkle your chosen fillings over one
+            half of the omelette.
+          </li>
+          <li>
+            <span class="subheading">Fold and serve:</span> As the omelette
+            continues to cook, carefully lift one edge and fold it over the
+            fillings. Let it cook for another minute, then slide it onto a
+            plate.
+          </li>
+          <li>
+            <span class="subheading">Enjoy:</span> Serve hot, with additional
+            salt and pepper if needed.
+          </li>
+        </ol>
+      </div>
+      <hr class="line" />
+      <div class="ingredients">
+        <h1>Nutrition</h1>
+        <p class="description2">
+          The table below shows nutritional values per serving without the
+          additional fillings.
+        </p>
+        <table>
+          <tr class="tblrw">
+            <td>Calories</td>
+            <td class="val">277kcal</td>
+          </tr>
+          <tr>
+            <td>Carbs</td>
+            <td class="val">0g</td>
+          </tr>
+          <tr>
+            <td>Protein</td>
+            <td class="val">20g</td>
+          </tr>
+          <tr>
+            <td>Fat</td>
+            <td class="val">22g</td>
+          </tr>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>
